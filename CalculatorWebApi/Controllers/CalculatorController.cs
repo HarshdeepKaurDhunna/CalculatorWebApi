@@ -20,28 +20,34 @@ namespace CalculatorWebApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public double getAddResult()
+        /*
+         *@Method Type:  Get 
+         *@Action: Add
+         */
+        [HttpGet("Add")]
+        public IActionResult GetAddResult(double left, double right)
         {
-            var result = 0;
-            return result;
+           return Ok(Calculator_Logic.Calculator.Addition(left, right));
             
+
         }
-        [HttpGet]
+
+        [HttpGet("Subtract")]
         public double getSubtractionResult()
         {
             var result = 0;
             return result;
 
         }
-        [HttpGet]
+
+        [HttpGet("Multiply")]
         public double getMultiplyResult()
         {
             var result = 0;
             return result;
 
         }
-        [HttpGet]
+        [HttpGet("Division")]
         public double getDivisionResult()
         {
             var result = 0;

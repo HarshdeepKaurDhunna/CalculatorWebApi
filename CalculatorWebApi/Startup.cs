@@ -40,9 +40,13 @@ namespace CalculatorWebApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
+                app.UseSwagger(c =>
+                {
+                    c.RouteTemplate = "/swagger/{documentName}/swagger.json";
+                });
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CalculatorWebApi v1"));
             }
+
 
             app.UseHttpsRedirection();
 
