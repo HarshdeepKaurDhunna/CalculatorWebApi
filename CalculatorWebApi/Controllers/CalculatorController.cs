@@ -40,10 +40,9 @@ namespace CalculatorWebApi.Controllers
         }
 
         [HttpGet("Multiply")]
-        public double getMultiplyResult()
+        public IActionResult getMultiplyResult(double left, double right)
         {
-            var result = 0;
-            return result;
+            return Ok(Calculator_Logic.Calculator.Multiplication(left, right));
 
         }
         [HttpGet("Division")]
