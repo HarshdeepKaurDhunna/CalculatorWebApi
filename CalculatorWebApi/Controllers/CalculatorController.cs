@@ -33,10 +33,9 @@ namespace CalculatorWebApi.Controllers
         }
 
         [HttpGet("Subtract")]
-        public double getSubtractionResult()
+        public IActionResult getSubtractionResult(double left, double right)
         {
-            var result = 0;
-            return result;
+            return Ok(Calculator_Logic.Calculator.Subtraction(left, right));
 
         }
 
