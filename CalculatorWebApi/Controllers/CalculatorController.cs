@@ -21,31 +21,31 @@ namespace CalculatorWebApi.Controllers
         }
 
         [HttpGet]
-        public Calculator getAddResult()
+        public double getAddResult()
         {
-            var rng = new Random();
-            return new Calculator();
+            var result = 0;
+            return result;
             
         }
         [HttpGet]
-        public Calculator getSubtractionResult()
+        public double getSubtractionResult()
         {
-            var rng = new Random();
-            return new Calculator();
+            var result = 0;
+            return result;
 
         }
         [HttpGet]
-        public Calculator getMultiplyResult()
+        public double getMultiplyResult()
         {
-            var rng = new Random();
-            return new Calculator();
+            var result = 0;
+            return result;
 
         }
         [HttpGet]
-        public Calculator getDivisionResult()
+        public double getDivisionResult()
         {
-            var rng = new Random();
-            return new Calculator();
+            var result = 0;
+            return result;
 
         }
         
