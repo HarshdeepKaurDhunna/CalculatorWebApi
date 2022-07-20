@@ -46,10 +46,17 @@ namespace CalculatorWebApi.Controllers
 
         }
         [HttpGet("Division")]
-        public double getDivisionResult()
+        public IActionResult getDivisionResult(double left, double right)
         {
-            var result = 0;
-            return result;
+            try
+            {
+                return Ok(Calculator_Logic.Calculator.Divide(left, right));
+            }
+            catch (DivideByZeroException e)
+            {
+                return BadRequest();
+
+            }
 
         }
         
