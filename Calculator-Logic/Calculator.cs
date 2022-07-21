@@ -10,7 +10,7 @@ namespace Calculator_Logic
          * @arguments 2 Double value left and right
          * @return Single double Value 
          */
-        public static double Addition(double left, double right)
+        public  double Addition(double left, double right)
         {
         
             try
@@ -28,7 +28,7 @@ namespace Calculator_Logic
          * @arguments 2 Double value left and right
          * @return Single double Value 
          */
-        public static double Subtraction(double left, double right)
+        public  double Subtraction(double left, double right)
         {
 
             try
@@ -46,7 +46,7 @@ namespace Calculator_Logic
          * @arguments 2 Double value left and right
          * @return Single double Value 
          */
-        public static double Multiplication(double left, double right)
+        public  double Multiplication(double left, double right)
         {
 
             try
@@ -64,7 +64,7 @@ namespace Calculator_Logic
          * @arguments 2 Double value left and right
          * @return Single double Value 
          */
-        public static double Divide(double left, double right)
+        public  double Divide(double left, double right)
         {
             if (right != 0)
             {

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Calculator_Logic;
 
 namespace CalculatorWebApi.Controllers
 {
@@ -11,8 +12,8 @@ namespace CalculatorWebApi.Controllers
     [Route("[controller]")]
     public class CalculatorController : ControllerBase
     {
-       
 
+        Calculator? Calc = null;
         private readonly ILogger<CalculatorController> _logger;
 
         public CalculatorController(ILogger<CalculatorController> logger)
@@ -27,7 +28,7 @@ namespace CalculatorWebApi.Controllers
         [HttpGet("Add")]
         public IActionResult GetAddResult(double left, double right)
         {
-           return Ok(Calculator_Logic.Calculator.Addition(left, right));
+           return Ok(Calc.Addition(left, right));
             
 
         }
@@ -35,14 +36,14 @@ namespace CalculatorWebApi.Controllers
         [HttpGet("Subtract")]
         public IActionResult getSubtractionResult(double left, double right)
         {
-            return Ok(Calculator_Logic.Calculator.Subtraction(left, right));
+            return Ok(Calc.Subtraction(left, right));
 
         }
 
         [HttpGet("Multiply")]
         public IActionResult getMultiplyResult(double left, double right)
         {
-            return Ok(Calculator_Logic.Calculator.Multiplication(left, right));
+            return Ok(Calc.Multiplication(left, right));
 
         }
         [HttpGet("Division")]
@@ -50,7 +51,7 @@ namespace CalculatorWebApi.Controllers
         {
             try
             {
-                return Ok(Calculator_Logic.Calculator.Divide(left, right));
+                return Ok(Calc.Divide(left, right));
             }
             catch (DivideByZeroException e)
             {
