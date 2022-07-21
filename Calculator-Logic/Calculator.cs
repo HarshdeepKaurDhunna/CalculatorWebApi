@@ -53,7 +53,7 @@ namespace Calculator_Logic
 
             try
             {
-                var val = String.Format("{0:0.00}", left / right);
+                var val = String.Format("{0:0.00}", left * right);
                 return Convert.ToDouble(val);
             }
             catch (FormatException)

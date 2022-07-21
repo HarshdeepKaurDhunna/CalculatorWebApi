@@ -175,5 +175,53 @@ namespace Calculator_Test
         }
 
 
+                            /** Multiply Test Methods **/
+
+        [TestMethod]
+        [DataRow(2, 2, 1)]
+        [DataRow(47.86, 7.99, 5.99)]
+        public void CalculatorCanMultiplyTwoPositiveNumber(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Multiplication(left, right));
+
+        }
+
+
+        [TestMethod]
+        [DataRow(400, -10, -40)]
+        [DataRow(439.6, -40, -10.99)]
+        public void CalculatorCanMultiplyNegativeNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Multiplication(left, right));
+
+        }
+
+        [TestMethod]
+        [DataRow(-400, 40, -10)]
+        [DataRow(-450.48, 40.99, -10.99)]
+        public void CalculatorCanMultiplyPositiveAndNegativeValues(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Multiplication(left, right));
+
+        }
+
+        [TestMethod]
+        [DataRow(0, 0, 10)]
+        [DataRow(0, 0, 11.99)]
+        public void CalculatorCanMultiplyZeroAndPositiveValues(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Multiplication(left, right));
+
+        }
+        [TestMethod]
+        [DataRow(0, 0, -10)]
+        [DataRow(0, 0, -11.99)]
+        public void CalculatorCanMultiplyZeroAndNegativeValues(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Multiplication(left, right));
+
+        }
+       
+
     }
 }
