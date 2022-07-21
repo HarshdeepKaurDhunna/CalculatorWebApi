@@ -15,7 +15,8 @@ namespace Calculator_Logic
         
             try
             {
-                return left + right;
+               var val = String.Format("{0:0.00}", left + right);
+                return Convert.ToDouble(val);
             }
             catch (FormatException)
             {
@@ -33,7 +34,8 @@ namespace Calculator_Logic
 
             try
             {
-                return left - right;
+                var val = String.Format("{0:0.00}", left - right);
+                return Convert.ToDouble(val);
             }
             catch (FormatException)
             {
@@ -51,7 +53,8 @@ namespace Calculator_Logic
 
             try
             {
-                return left * right;
+                var val = String.Format("{0:0.00}", left / right);
+                return Convert.ToDouble(val);
             }
             catch (FormatException)
             {
@@ -68,7 +71,8 @@ namespace Calculator_Logic
         {
             if (right != 0)
             {
-                return left / right;
+                var val = String.Format("{0:0.00}", left / right);
+                return Convert.ToDouble(val);
             }
             else
             {
