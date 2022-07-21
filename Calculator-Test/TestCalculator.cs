@@ -29,7 +29,7 @@ namespace Calculator_Test
 
         [TestMethod]
         [DataRowAttribute(3, 1, 2)]
-        [DataRowAttribute(double.MaxValue + 3, 1, double.MaxValue)]
+        [DataRowAttribute(4.46, 1.56, 2.90)]
         public void CalculatorCanAddTwoPositiveNumber(double expected, double left, double right)
         {
             Assert.AreEqual(expected, Calc.Addition(left, right));
@@ -38,7 +38,7 @@ namespace Calculator_Test
 
         [TestMethod]
         [DataRow(-50, -40, -10)]
-        [DataRow(-51.980000000000004, -40.99, -10.99)]
+        [DataRow(-51.98, -40.99, -10.99)]
         public void CalculatorCanAddNegativeNumbers(double expected, double left, double right)
         {
             Assert.AreEqual(expected, Calc.Addition(left, right));
@@ -72,11 +72,13 @@ namespace Calculator_Test
 
         }
 
-                        /** Subtraction Test Methods **/
+
+
+                              /** Subtraction Test Methods **/
 
         [TestMethod]
         [DataRowAttribute(1, 2, 1)]
-       
+        [DataRowAttribute(1.57, 2.67, 1.10)]
         public void CalculatorCanSubtractTwoPositiveNumber(double expected, double left, double right)
         {
             Assert.AreEqual(expected, Calc.Subtraction(left, right));
@@ -94,7 +96,7 @@ namespace Calculator_Test
 
         [TestMethod]
         [DataRow(50, 40, -10)]
-        [DataRow(51.980000000000004, 40.99, -10.99)]
+        [DataRow(51.98, 40.99, -10.99)]
         public void CalculatorCanSubtractPositiveAndNegativeValues(double expected, double left, double right)
         {
             Assert.AreEqual(expected, Calc.Subtraction(left, right));
@@ -119,6 +121,59 @@ namespace Calculator_Test
 
         }
 
-      
+                            /** Division Test Methods **/
+
+        [TestMethod]
+        [DataRow(2, 2, 1)]
+        [DataRow(1.4, 7, 5)]
+        [DataRow(1.33, 7.99, 5.99)]
+        public void CalculatorCanDivideTwoPositiveNumber(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Divide(left, right));
+
+        }
+
+
+        [TestMethod]
+        [DataRow(0.25, -10, -40)]
+        [DataRow(3.64, -40, -10.99)]
+        public void CalculatorCanDivideNegativeNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Divide(left, right));
+
+        }
+
+        [TestMethod]
+        [DataRow(-4, 40, -10)]
+        [DataRow(-3.73, 40.99, -10.99)]
+        public void CalculatorCanDividePositiveAndNegativeValues(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Divide(left, right));
+
+        }
+
+        [TestMethod]
+        [DataRow(0, 0, 10)]
+        [DataRow(0, 0, 11.99)]
+        public void CalculatorCanDivideZeroAndPositiveValues(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Divide(left, right));
+
+        }
+        [TestMethod]
+        [DataRow(0, 0, -10)]
+        [DataRow(0, 0, -11.99)]
+        public void CalculatorCanDivideZeroAndNegativeValues(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Divide(left, right));
+
+        }
+        public void CalculatorThrowExceptionWhenDividingByZero()
+        {
+            Assert.ThrowsException<DivideByZeroException>(() => { Calc.Divide(3, 0); });
+
+        }
+
+
     }
 }
