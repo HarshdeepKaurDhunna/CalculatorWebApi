@@ -33,10 +33,42 @@ namespace Calculator_Test
             Assert.AreEqual(expected, Calc.Addition(left, right));
 
         }
-        public void CalculatorThrowExceptionWhenDividingByZero()
+
+        [TestMethod]
+        [DataRow(-50, -40, -10)]
+        [DataRow(-51.980000000000004, -40.99, -10.99)]
+        public void CalculatorCanAddNegativeNumbers(double expected, double left, double right)
         {
-            Assert.ThrowsException<DivideByZeroException>(() => { Calc.Divide(3, 0); });
+            Assert.AreEqual(expected, Calc.Addition(left, right));
 
         }
+
+        [TestMethod]
+        [DataRow(30, 40, -10)]
+        [DataRow(-30, -40, 10)]
+        public void CalculatorCanAddPositiveAndNegativeValues(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Addition(left, right));
+
+        }
+
+        [TestMethod]
+        [DataRow(10, 0, 10)]
+        [DataRow(30.99, 30.99, 0)]
+        public void CalculatorCanAddPositiveAndZeroValue(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Addition(left, right));
+
+        }
+
+        [TestMethod]
+        [DataRow(-10, 0, -10)]
+        [DataRow(-30.99, -30.99, 0)]
+        public void CalculatorCanAddNegativeAndZeroValue(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Calc.Addition(left, right));
+
+        }
+
     }
 }
